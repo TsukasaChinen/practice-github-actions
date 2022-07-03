@@ -23,7 +23,8 @@ jobs:
 
       # npm インストール
       - name: Install NPM packages
-        run: npm ci --frozen-lockfile
+        run: npm install --frozen-lockfile
 
+      # ビルドとエクスポート
       - name: Build and Export
         run: npm run build
