@@ -29,16 +29,8 @@ jobs:
       - name: Build and Export
         run: npm run build
 
-  FTP-Deploy-Action:
-    name: FTP-Deploy-Action
-    runs-on: ubuntu-latest
-    steps:
-      # main ブランチを取得
-      - name: Checkout
-        uses: actions/checkout@v2
-
-      - name: FTP-Deploy-Action
-        uses: SamKirkland/FTP-Deploy-Action@4.2.0 # FTPアップロードアクション（https://github.com/SamKirkland/FTP-Deploy-Action）
+      - name: 📂 Sync files
+        uses: SamKirkland/FTP-Deploy-Action@4.3.0
         with:
           server: sv13020.xserver.jp # FTPのサーバーアドレス
           username: xs787777 # FTPのユーザー名名
