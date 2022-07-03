@@ -8,11 +8,11 @@ on:
       - hello_wp # WordPress側のevent_typeと合わせる
 jobs:
   Build:
-    name: Build
+    name: 🎉 Build and Deploy
     runs-on: ubuntu-latest
     steps:
       # main ブランチを取得
-      - name: Checkout
+      - name: 🚚 Checkout
         uses: actions/checkout@v2
 
       # node.js のセットアップ
@@ -26,7 +26,7 @@ jobs:
         run: npm install --frozen-lockfile
 
       # ビルドとエクスポート
-      - name: Build and Export
+      - name: 🔨 Build and Export
         run: npm run build
 
       - name: 📂 Sync files
@@ -36,4 +36,4 @@ jobs:
           username: xs787777 # FTPのユーザー名名
           password: Co13*Co13mina! # FTPのパスワード
           local-dir: ./out/ # アップロードしたいファイルのパス、この場合srcディレクトリ内をアップロード対象としている
-          server-dir: /home/xs787777/trylight.net/public_html/gatest/ # アップロード先のリモートパス
+          server-dir: /trylight.net/public_html/gatest/ # アップロード先のリモートパス
