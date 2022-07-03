@@ -1,0 +1,29 @@
+name: Hello WP and Next
+
+on:
+  # 手動でも実行したいのでworkflow_dispatchを設定
+  workflow_dispatch:
+  repository_dispatch:
+    types:
+      - hello_wp # WordPress側のevent_typeと合わせる
+jobs:
+  build:
+    name: build
+    runs-on: ubuntu-latest
+    steps:
+      # main ブランチを取得
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      # node.js のセットアップ
+      - name: Setup Node
+        uses: actions/setup-node@v2
+        with:
+          node-version: "14"
+
+      # npm インストール
+      - name: Install NPM packages
+        run: npm install --frozen-lockfile
+
+      - name: Build and Export
+        run: npm run build
