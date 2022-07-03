@@ -15,7 +15,9 @@ export default function Home() {
           Welcome to <a href="https://nextjs.org">Next.js!</a>
         </h1>
 
-        <p className={styles.description}>I try auto build and deploy</p>
+        <p className={styles.description}>
+          てやんでぇ！I try auto build and deploy
+        </p>
 
         <div className={styles.grid}>
           <a href="https://nextjs.org/docs" className={styles.card}>
