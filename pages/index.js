@@ -16,7 +16,7 @@ export default function Home() {
         </h1>
 
         <p className={styles.description}>
-          てやんでぇ！I try auto build and deploy
+          にゃろめー！！I try auto build and deploy
         </p>
 
         <div className={styles.grid}>
