@@ -44,4 +44,4 @@ jobs:
           username: xs787777 # FTPのユーザー名名
           password: Co13*Co13mina! # FTPのパスワード
           local-dir: ./out/ # アップロードしたいファイルのパス、この場合srcディレクトリ内をアップロード対象としている
-          server-dir: /home/xs787777/trylight.net/public_html/gatest # アップロード先のリモートパス
+          server-dir: /home/xs787777/trylight.net/public_html/gatest/ # アップロード先のリモートパス
