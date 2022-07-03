@@ -1,4 +1,4 @@
-name: Hello WP and Next
+name: Dispatch by WP
 
 on:
   # 手動でも実行したいのでworkflow_dispatchを設定
