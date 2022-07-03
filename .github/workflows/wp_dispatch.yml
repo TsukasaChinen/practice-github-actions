@@ -29,12 +29,12 @@ jobs:
       - name: Build and Export
         run: npm run build
 
-      # アップロード
+      # アップロード FTPS
       - name: Sync files
         uses: SamKirkland/FTP-Deploy-Action@4.3.0
         with:
-          server: sv13020.xserver.jp # FTPのサーバーアドレス
-          username: xs787777 # FTPのユーザー名名
-          password: Co13*Co13mina! # FTPのパスワード
-          local-dir: ./out/ # アップロードしたいファイルのパス、この場合srcディレクトリ内をアップロード対象としている
-          server-dir: /trylight.net/public_html/gatest/ # アップロード先のリモートパス
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USER }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          local-dir: ./out/
+          server-dir: /trylight.net/public_html/gatest/
