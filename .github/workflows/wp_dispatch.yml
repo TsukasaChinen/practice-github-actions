@@ -8,11 +8,11 @@ on:
       - hello_wp # WordPress側のevent_typeと合わせる
 jobs:
   Build:
-    name: 🎉 Build and Deploy
+    name: Build and Deploy
     runs-on: ubuntu-latest
     steps:
       # main ブランチを取得
-      - name: 🚚 Checkout
+      - name: Checkout
         uses: actions/checkout@v2
 
       # node.js のセットアップ
@@ -26,10 +26,10 @@ jobs:
         run: npm install --frozen-lockfile
 
       # ビルドとエクスポート
-      - name: 🔨 Build and Export
+      - name: Build and Export
         run: npm run build
 
-      - name: 📂 Sync files
+      - name: Sync files
         uses: SamKirkland/FTP-Deploy-Action@4.3.0
         with:
           server: sv13020.xserver.jp # FTPのサーバーアドレス
