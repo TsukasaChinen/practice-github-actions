@@ -16,7 +16,7 @@ export default function Home() {
         </h1>
 
         <p className={styles.description}>
-          おりゃー！！I try auto build and deploy
+          記事削除！！I try auto build and deploy
         </p>
 
         <div className={styles.grid}>

@@ -5,7 +5,7 @@ on:
   workflow_dispatch:
   repository_dispatch:
     types:
-      - hello_wp # WordPress側のevent_typeと合わせる
+      - dispatch_by_wp # WordPress側のevent_typeと合わせる
 jobs:
   Build:
     name: Build and Deploy
