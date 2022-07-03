@@ -7,8 +7,8 @@ on:
     types:
       - hello_wp # WordPress側のevent_typeと合わせる
 jobs:
-  build:
-    name: build
+  Build:
+    name: Build
     runs-on: ubuntu-latest
     steps:
       # main ブランチを取得
@@ -28,3 +28,20 @@ jobs:
       # ビルドとエクスポート
       - name: Build and Export
         run: npm run build
+
+  FTP-Deploy-Action:
+    name: FTP-Deploy-Action
+    runs-on: ubuntu-latest
+    steps:
+      # main ブランチを取得
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: FTP-Deploy-Action
+        uses: SamKirkland/FTP-Deploy-Action@4.2.0 # FTPアップロードアクション（https://github.com/SamKirkland/FTP-Deploy-Action）
+        with:
+          server: sv13020.xserver.jp # FTPのサーバーアドレス
+          username: xs787777 # FTPのユーザー名名
+          password: Co13*Co13mina! # FTPのパスワード
+          local-dir: ./out/ # アップロードしたいファイルのパス、この場合srcディレクトリ内をアップロード対象としている
+          server-dir: /home/xs787777/trylight.net/public_html/gatest # アップロード先のリモートパス
