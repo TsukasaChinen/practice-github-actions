@@ -39,4 +39,4 @@ jobs:
           protocol: ftps
           port: 21
           local-dir: ./out/
-          server-dir: /trylight.net/public_html/gatest/
+          server-dir: ${{ secrets.FTP_DIRECTORY_PATH }}
